@@ -1,5 +1,14 @@
 # Handle user input and call helper functions
 # lib/cli.py
+import sys
+from pathlib import Path
+
+# Get the parent directory (lib) and add it to the system path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+# Now, your imports should work
+
 from helpers import (
     add_recipe, view_recipes, find_recipe_by_name, delete_recipe, exit_program
 )
