@@ -1,6 +1,13 @@
 # Populate the database with some initial, fake data for testing purposes.
 
 # lib/db/seed.py
+import sys
+from pathlib import Path
+
+# Add the project root to the system path
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
+
 from faker import Faker
 from lib.models import session
 from lib.models.category import Category
