@@ -1,3 +1,16 @@
+import sys
+from pathlib import Path
+
+# Get the project root directory and add it to the system path
+# This allows Alembic to find your models.
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+# The rest of your env.py file
+from alembic import context
+from sqlalchemy import engine_from_config, pool
+from lib.models.__init__ import Base
+
 from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
