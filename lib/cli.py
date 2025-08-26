@@ -2,22 +2,18 @@
 import sys
 from pathlib import Path
 
-# Get the project's root directory and add it to the system path.
-# This ensures that 'lib' is a recognized package.
+# Ensures that 'lib' is a recognized package.
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 
-# lib/cli.py
-
-
 from lib.helpers import (
-    # ... other imports
+    
     add_recipe,
     delete_recipe,
     find_recipe_by_name,
-    view_recipes,  # Added missing import
-    view_recipes_by_category, # New import for viewing by category
+    view_recipes,  
+    view_recipes_by_category, 
     exit_program
 )
 
@@ -27,8 +23,8 @@ def main():
         print("1. Add a new recipe")
         print("2. View all recipes")
         print("3. Find a recipe by name")
-        print("4. Delete a recipe") # New menu option
-        print("5. View recipes by category") # New menu option
+        print("4. Delete a recipe") 
+        print("5. View recipes by category") 
         print("0. Exit")
 
         choice = input("\nEnter your choice: ")
@@ -40,9 +36,9 @@ def main():
         elif choice == '3':
             find_recipe_by_name()
         elif choice == '4':
-            delete_recipe() # Call the new delete function
+            delete_recipe() # delete function
         elif choice == '5':
-            view_recipes_by_category() # Call the new view by category function
+            view_recipes_by_category() 
         elif choice == '0':
             exit_program()
             break

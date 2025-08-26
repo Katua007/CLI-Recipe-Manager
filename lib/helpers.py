@@ -22,7 +22,7 @@ def find_recipe_by_name():
             print(f"- {ingredient.name} ({ingredient.quantity})")
     else:
         print(f"No recipe found with the name '{recipe_name}'.")
-# Other helper functions like add_recipe(), view_recipes(), etc., go here.
+
 
 def exit_program():
     print("Goodbye!")
@@ -32,7 +32,7 @@ def add_recipe():
     name = input("Enter recipe name: ")
     instructions = input("Enter instructions: ")
 
-    # User story 6: Categorize recipes
+    # Categorize recipes
     category_name = input("Enter category (e.g., Breakfast, Dinner): ")
     category = session.query(Category).filter_by(name=category_name).first()
     if not category:
@@ -45,7 +45,7 @@ def add_recipe():
         session.commit()
         print(f"Recipe '{name}' added successfully!")
 
-        # User story 1: Add ingredients (lists/dicts)
+        # Add ingredients 
         while True:
             ingredient_name = input("Enter an ingredient name (or 'done' to finish): ")
             if ingredient_name.lower() == 'done':
@@ -92,7 +92,7 @@ def view_recipes_by_category():
                 print(f"- {recipe.name}")
     else:
         print(f"Category '{category_name}' not found.")
-          
+
 
 def delete_recipe():
     """Deletes a recipe from the database."""
@@ -106,5 +106,4 @@ def delete_recipe():
     else:
         print(f"Recipe '{recipe_name}' not found.")
 
-# Implement the other functions for user stories 3, 4, 5, etc.
-# Make sure to handle input validation and provide clear error messages.
+# Implement the other functions for future purposes
